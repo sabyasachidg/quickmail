@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Email Sender</h2>
+    <form action="/send_emails" method="POST" enctype="multipart/form-data">
+        <label for="senderName">Sender Name:</label>
+        <input type="text" name="senderName" required><br><br>
+        
+        <label for="senderEmail">Sender Email:</label>
+        <input type="email" name="senderEmail" required><br><br>
+        
+        <label for="senderPassword">Sender Password:</label>
+        <input type="password" name="senderPassword" required><br><br>
+        
+        <label for="subject">Email Subject:</label>
+        <input type="text" name="subject" required><br><br>
+        
+        <label for="bodyFile">Email Body File:</label>
+        <input type="file" name="bodyFile" required><br><br>
+        
+        <label for="recipientFile">Recipient File (CSV):</label>
+        <input type="file" name="recipientFile" required><br><br>
+        
+        <input type="submit" value="Send Emails">
+    </form>
+</body>
+</html>
